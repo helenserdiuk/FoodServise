@@ -12,6 +12,13 @@ const Theme = {
 
 menuList.innerHTML = menuItem;
 
+const controlTheme = localStorage.getItem('Theme');
+
+if (controlTheme === Theme.DARK) {
+  toggleTheme.checked = true;
+  body.classList.add(Theme.DARK);
+}
+
 toggleTheme.addEventListener('change', choiceThemesDark);
 
 function choiceThemesDark (event) {
@@ -26,6 +33,7 @@ function choiceThemesDark (event) {
     }else{
         document.body.classList.add(Theme.LIGHT);
         document.body.classList.remove(Theme.DARK);
+        window.localStorage.setItem('Theme', Theme.LIGHT);
     }
 }
 
