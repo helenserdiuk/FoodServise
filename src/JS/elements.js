@@ -16,7 +16,7 @@ const controlTheme = localStorage.getItem('Theme');
 
 if (controlTheme === Theme.DARK) {
   toggleTheme.checked = true;
-  body.classList.add(Theme.DARK);
+  document.body.classList.add(Theme.DARK);
 }
 
 toggleTheme.addEventListener('change', choiceThemesDark);
